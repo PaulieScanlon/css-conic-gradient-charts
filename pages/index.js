@@ -22,11 +22,13 @@ const Page = () => {
           </a>
         </p>
       </div>
-      <pre className='m-0 mx-auto max-w-2xl'>
-        background:conic-gradient(var(--color-pink-500) 0deg 137deg, var(--color-pink-400) 137deg 209deg,
-        var(--color-pink-300) 209deg 263deg, var(--color-pink-200) 263deg 342deg, var(--color-pink-100) 342deg 360deg
-      </pre>
-      <div className='grid sm:grid-cols-2 gap-4 sm:gap-8'>
+      <div className='flex justify-center overflow-x-auto'>
+        <pre className='m-0 max-w-2xl'>
+          background:conic-gradient(var(--color-pink-500) 0deg 137deg, var(--color-pink-400) 137deg 209deg,
+          var(--color-pink-300) 209deg 263deg, var(--color-pink-200) 263deg 342deg, var(--color-pink-100) 342deg 360deg
+        </pre>
+      </div>
+      <div className='grid sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-8'>
         <div className='flex bg-bubbles rounded border border-gray-700 p-4 md:p-8'>
           <DonutChartClipPathDynamicColors
             data={[
