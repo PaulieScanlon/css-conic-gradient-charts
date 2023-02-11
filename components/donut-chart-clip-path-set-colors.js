@@ -50,12 +50,13 @@ const Chart = ({ data }) => {
 
 Chart.propTypes = {
   /** Shape of the data to drive the chart */
-  data: PropTypes.arrayOf([
+  data: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
       value: PropTypes.number.isRequired,
       color: PropTypes.string,
-    }),
-  ]).isRequired,
+    })
+  ).isRequired,
 };
+
 export default Chart;

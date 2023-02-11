@@ -53,6 +53,16 @@ const css_string = data
   .join();
 ```
 
+### Example Output
+
+```shell
+var(--color-violet-500) 0deg 36deg,
+var(--color-violet-400) 36deg 94deg,
+var(--color-violet-300) 94deg 166deg,
+var(--color-violet-200) 166deg 259deg,
+var(--color-violet-100) 259deg 360deg
+```
+
 ### Usage
 
 ```javascript
