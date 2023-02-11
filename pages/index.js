@@ -141,7 +141,7 @@ const Page = () => {
       </div>
       <div>
         <a
-          href=' https://github.com/PaulieScanlon/css-conic-gradient-donut-chart'
+          href=' https://github.com/PaulieScanlon/css-conic-gradient-charts'
           target='_blank'
           rel='noopener'
           className='inline-flex gap-2 items-center text-xs text-gray-300 hover:text-gray-400'
@@ -163,7 +163,7 @@ const Page = () => {
 		c4.19-1.41,7.21-5.38,7.21-10.08C22.56,6.39,17.82,1.64,12.01,1.64z'
             />
           </svg>
-          PaulieScanlon/css-conic-gradient-donut-chart
+          PaulieScanlon/css-conic-gradient-charts
         </a>
       </div>
     </section>

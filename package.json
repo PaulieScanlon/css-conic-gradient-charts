@@ -1,5 +1,5 @@
 {
-  "name": "css-conic-gradient-donut-chart",
+  "name": "css-conic-gradient-charts",
   "version": "1.0.0",
   "description": "A Donut chart made with a CSS conic-gradient()",
   "main": "index.js",
@@ -12,15 +12,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PaulieScanlon/css-conic-gradient-donut-chart.git"
+    "url": "git+https://github.com/PaulieScanlon/css-conic-gradient-charts.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/PaulieScanlon/css-conic-gradient-donut-chart/issues"
+    "url": "https://github.com/PaulieScanlon/css-conic-gradient-charts/issues"
   },
-  "homepage": "https://github.com/PaulieScanlon/css-conic-gradient-donut-chart#readme",
+  "homepage": "https://github.com/PaulieScanlon/css-conic-gradient-charts#readme",
   "dependencies": {
     "next": "^13.1.6",
     "prop-types": "^15.8.1",
