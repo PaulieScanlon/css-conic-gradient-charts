@@ -1,0 +1,36 @@
+{
+  "name": "css-conic-gradient-donut-chart",
+  "version": "1.0.0",
+  "description": "A Donut chart made with a CSS conic-gradient()",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulieScanlon/css-conic-gradient-donut-chart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulieScanlon/css-conic-gradient-donut-chart/issues"
+  },
+  "homepage": "https://github.com/PaulieScanlon/css-conic-gradient-donut-chart#readme",
+  "dependencies": {
+    "next": "^13.1.6",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.6"
+  }
+}
