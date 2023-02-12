@@ -5,7 +5,7 @@ import GitHubLegend from '../components/github-legend';
 
 const Page = ({ data }) => {
   return (
-    <div className='grid sm:grid-cols-2 gap-4 sm:gap-8'>
+    <div className='grid md:grid-cols-2 gap-4 sm:gap-8'>
       <div className='flex bg-bubbles rounded border border-gray-700 p-4 md:p-8'>
         <GitHubChart data={data} />
       </div>
