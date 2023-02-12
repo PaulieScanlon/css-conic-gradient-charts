@@ -6,14 +6,7 @@ const Legend = ({ data }) => {
     <div className='flex flex-col gap-8 grow'>
       <div className='flex flex-col'>
         <h2 className='m-0 text-white text-xl font-bold'>Top 10 Languages</h2>
-        <a
-          href='https://github.com/PaulieScanlon/css-conic-gradient-charts/blob/main/components/github-legend.js'
-          target='_blank'
-          rel='noopener'
-          className='m-0 text-xs text-gray-400 flex hover:text-yellow-300'
-        >
-          ./components/github-legend.js
-        </a>
+        <small className='m-0 text-gray-300 leading-none'>From last 100 repositories</small>
       </div>
       <div>
         <ul className='list-none flex flex-col gap-2 m-0 p-0 text-gray-200'>
