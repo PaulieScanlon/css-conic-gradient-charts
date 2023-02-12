@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Chart = ({ data }) => {
   const total_value = data.reduce((a, b) => a + b.value, 0);
-  const percent = (num) => Math.round((num / total_value) * 100);
-  const degrees = (percent) => Math.round((percent / 100) * 360);
+  const convertToPercent = (num) => Math.round((num / total_value) * 100);
+  const convertToDegrees = (num) => Math.round((num / 100) * 360);
 
   const css_string = data
     .reduce((items, item, index, array) => {
@@ -14,10 +14,10 @@ const Chart = ({ data }) => {
       item.count += array[index - 1]?.count || 0;
       item.start_value = item.start_value || array[index - 1]?.count ? array[index - 1].count : 0;
       item.end_value = item.count += item.value;
-      item.start_percent = percent(item.start_value);
-      item.end_percent = percent(item.end_value);
-      item.start_degrees = degrees(item.start_percent);
-      item.end_degrees = degrees(item.end_percent);
+      item.start_percent = convertToPercent(item.start_value);
+      item.end_percent = convertToPercent(item.end_value);
+      item.start_degrees = convertToDegrees(item.start_percent);
+      item.end_degrees = convertToDegrees(item.end_percent);
 
       return items;
     }, [])
