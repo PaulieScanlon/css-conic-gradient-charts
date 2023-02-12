@@ -6,7 +6,7 @@ Create Donut or Pie Charts using the CSS [conic-gradient](https://developer.mozi
 
 ## Principle
 
-Learn the principle behind this approach from [Shruti Balasa](https://twitter.com/shrutibalasa/status/1612785019159982080?s=20&t=6TLkMmRjOFQxKP7W-jFPcA).
+Learn the principle behind this approach from [Shruti Balasa](https://twitter.com/shrutibalasa/status/1612785019159982080?s=20&t=6TLkMmRjOFQxKP7W-jFPcA). You can also see an example in the [mdn web docs](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient#gradient_pie-chart).
 
 ## Dynamic
 
@@ -95,3 +95,9 @@ var(--color-violet-500) 655deg 1145deg
 #### CSS
 
 CSS class names are from [TailwindCSS](https://tailwindcss.com/docs/customizing-colors)
+
+#### Bugs
+
+Firefox
+
+- [CSS conic-gradient the edges are blurred](https://bugzilla.mozilla.org/show_bug.cgi?id=1625917)
