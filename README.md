@@ -2,6 +2,8 @@
 
 Create Donut or Pie Charts using the CSS [conic-gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient)
 
+- 🚀 [Live Preview](https://css-conic-gradient-charts.vercel.app/)
+
 ## Principle
 
 Learn the principle behind this approach from [Shruti Balasa](https://twitter.com/shrutibalasa/status/1612785019159982080?s=20&t=6TLkMmRjOFQxKP7W-jFPcA).
