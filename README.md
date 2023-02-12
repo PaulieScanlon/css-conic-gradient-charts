@@ -48,7 +48,7 @@ const css_string = data
     const start_degrees = degrees(percent(start_value));
     const end_degrees = degrees(percent(end_value));
 
-    return ` var(--color-violet-${(array.length - index) * 100}) ${start_degrees}deg ${end_degrees}deg`;
+    return ` var(--color-violet-${(index + 1) * 100}) ${start_degrees}deg ${end_degrees}deg`;
   })
   .join();
 ```
