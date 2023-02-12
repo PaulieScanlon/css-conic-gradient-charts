@@ -1,24 +1,16 @@
 import React from 'react';
-import dynamic from 'next/dynamic';
-
-// const GitHubChart = dynamic(() => import('../components/github-chart'), {
-//   ssr: false,
-// });
 
 import GitHubChart from '../components/github-chart';
 import GitHubLegend from '../components/github-legend';
 
-const Page = ({ chart_data, css_string }) => {
-  // console.log(chart_data);
-  console.log(css_string);
-
+const Page = ({ data }) => {
   return (
     <div className='grid sm:grid-cols-2 gap-4 sm:gap-8'>
       <div className='flex bg-bubbles rounded border border-gray-700 p-4 md:p-8'>
-        <GitHubChart css_string={css_string} />
+        <GitHubChart data={data} />
       </div>
       <div className='flex bg-gray-800 rounded border border-gray-700 p-4 md:p-8'>
-        <GitHubLegend data={chart_data} />
+        <GitHubLegend data={data} />
       </div>
     </div>
   );
@@ -90,87 +82,30 @@ export async function getServerSideProps() {
         return items;
       }, [])
       .sort((a, b) => b.value - a.value)
-      .slice(0, 9);
-
-    console.log(data);
-
-    // const data = [
-    //   {
-    //     name: 'Cluster 1',
-    //     value: 210,
-    //     color: 'var(--color-fuchsia-400)',
-    //   },
-    //   {
-    //     name: 'Cluster 2',
-    //     value: 30,
-    //     color: 'var(--color-fuchsia-100)',
-    //   },
-    //   {
-    //     name: 'Cluster 3',
-    //     value: 180,
-    //     color: 'var(--color-fuchsia-300)',
-    //   },
-    //   {
-    //     name: 'Cluster 4',
-    //     value: 260,
-    //     color: 'var(--color-fuchsia-500)',
-    //   },
-    //   {
-    //     name: 'Cluster 5',
-    //     value: 60,
-    //     color: 'var(--color-fuchsia-200)',
-    //   },
-    // ].sort((a, b) => a.value - b.value);
+      .slice(0, 10);
 
     const total_value = data.reduce((a, b) => a + b.value, 0);
     const percent = (num) => Math.round((num / total_value) * 100);
     const degrees = (percent) => Math.round((percent / 100) * 360);
 
-    const css_string = data
-      .reduce((items, item, index, array) => {
-        items.push(item);
+    const chart_data = data.reduce((items, item, index, array) => {
+      items.push(item);
 
-        item.start_degrees = item.start_degrees || degrees(percent(item.value));
-        item.end_degrees = item.end_degrees || degrees(percent((item.count += items[index - 1]?.count || 0)));
+      item.count = item.count || 0;
+      item.count += array[index - 1]?.count || 0;
+      item.start_value = item.start_value || array[index - 1]?.count ? array[index - 1].count : 0;
+      item.end_value = item.count += item.value;
+      item.start_percent = percent(item.start_value);
+      item.end_percent = percent(item.end_value);
+      item.start_degrees = degrees(item.start_percent);
+      item.end_degrees = degrees(item.end_percent);
 
-        item.count = item.count || 0;
-        item.count += array[index - 1]?.count || 0;
-        item.start_value = item.start_value || array[index - 1]?.count ? array[index - 1].count : 0;
-        item.end_value = item.count += item.value;
-        item.start_percent = percent(item.start_value);
-        item.end_percent = percent(item.end_value);
-        item.start_degrees = degrees(item.start_percent);
-        item.end_degrees = degrees(item.end_percent);
-
-        console.log('name: ', item.name);
-        // console.log('color: ', item.color);
-        console.log('value: ', item.value);
-        console.log('item.count: ', item.count);
-        console.log('item.start_value: ', item.start_value);
-        // console.log('item.end_value: ', item.end_value);
-        // console.log('item.start_percent: ', item.start_percent);
-        // console.log('item.end_percent: ', item.end_percent);
-
-        console.log(item.color);
-        console.log('item.start_degrees: ', item.start_degrees);
-        console.log('item.end_degrees: ', item.end_degrees);
-        console.log('');
-
-        return items;
-      }, [])
-      .map((chart) => {
-        const { color, start_degrees, end_degrees } = chart;
-        return ` ${color} ${start_degrees}deg ${end_degrees}deg`;
-      })
-      .join();
-
-    // console.log('chart_data: ', chart_data);
-    // console.log('css_string: ', css_string);
+      return items;
+    }, []);
 
     return {
       props: {
-        chart_data: data,
-        css_string: css_string,
+        data: chart_data,
       },
     };
   } catch (error) {

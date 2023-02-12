@@ -5,7 +5,7 @@ const Legend = ({ data }) => {
   return (
     <div className='flex flex-col gap-8 grow'>
       <div className='flex flex-col'>
-        <h2 className='m-0 text-white text-xl font-bold'>GitHub Legend</h2>
+        <h2 className='m-0 text-white text-xl font-bold'>Top 10 Languages</h2>
         <a
           href='https://github.com/PaulieScanlon/css-conic-gradient-charts/blob/main/components/github-legend.js'
           target='_blank'

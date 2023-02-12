@@ -8,16 +8,23 @@ const Chart = ({ data }) => {
 
   const css_string = data
     .reduce((items, item, index, array) => {
-      const start_value = array[index - 1]?.value ? array[index - 1].value : 0;
-      const end_value = (item.value += array[index - 1]?.value ? array[index - 1].value : 0);
+      items.push(item);
 
-      const start_degrees = degrees(percent(start_value));
-      const end_degrees = degrees(percent(end_value));
-
-      items.push(` var(--color-pink-${(index + 1) * 100}) ${start_degrees}deg ${end_degrees}deg`);
+      item.count = item.count || 0;
+      item.count += array[index - 1]?.count || 0;
+      item.start_value = item.start_value || array[index - 1]?.count ? array[index - 1].count : 0;
+      item.end_value = item.count += item.value;
+      item.start_percent = percent(item.start_value);
+      item.end_percent = percent(item.end_value);
+      item.start_degrees = degrees(item.start_percent);
+      item.end_degrees = degrees(item.end_percent);
 
       return items;
     }, [])
+    .map((chart, index) => {
+      const { start_degrees, end_degrees } = chart;
+      return ` var(--color-pink-${(index + 1) * 100}) ${start_degrees}deg ${end_degrees}deg`;
+    })
     .join();
 
   return (

@@ -7,13 +7,22 @@ const Chart = ({ data }) => {
   const degrees = (percent) => Math.round((percent / 100) * 360);
 
   const css_string = data
-    .map((_, index, array) => {
-      const start_value = array[index - 1]?.value ? array[index - 1].value : 0;
-      const end_value = (array[index].value += array[index - 1]?.value ? array[index - 1].value : 0);
+    .reduce((items, item, index, array) => {
+      items.push(item);
 
-      const start_degrees = degrees(percent(start_value));
-      const end_degrees = degrees(percent(end_value));
+      item.count = item.count || 0;
+      item.count += array[index - 1]?.count || 0;
+      item.start_value = item.start_value || array[index - 1]?.count ? array[index - 1].count : 0;
+      item.end_value = item.count += item.value;
+      item.start_percent = percent(item.start_value);
+      item.end_percent = percent(item.end_value);
+      item.start_degrees = degrees(item.start_percent);
+      item.end_degrees = degrees(item.end_percent);
 
+      return items;
+    }, [])
+    .map((chart, index) => {
+      const { start_degrees, end_degrees } = chart;
       return ` var(--color-violet-${(index + 1) * 100}) ${start_degrees}deg ${end_degrees}deg`;
     })
     .join();
