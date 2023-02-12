@@ -9,8 +9,6 @@ const Chart = ({ data }) => {
   const css_string = data
     .map((raw, index, array) => {
       const { color } = raw;
-      // data[index].name isn't used anywhere, but it's handy to have for console.logs
-
       const start_value = array[index - 1]?.value ? array[index - 1].value : 0;
       const end_value = (array[index].value += array[index - 1]?.value ? array[index - 1].value : 0);
 
@@ -25,7 +23,7 @@ const Chart = ({ data }) => {
     <div className='flex flex-col gap-8 grow'>
       <div className='flex flex-col grow'>
         <h2 className='m-0 text-white text-xl font-bold'>Donut Chart 2</h2>
-        <p className='m-0 text-xs text-gray-400 flex'>./components/donut-chart-clip-path-set-colors.js</p>
+        <p className='m-0 text-xs text-gray-400 flex'>./components/donut-2.js</p>
       </div>
       <div>
         <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' className='rounded-full'>
