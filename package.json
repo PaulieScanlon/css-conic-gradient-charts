@@ -1,7 +1,7 @@
 {
   "name": "css-conic-gradient-charts",
   "version": "1.0.0",
-  "description": "A Donut chart made with a CSS conic-gradient()",
+  "description": "Create Donut or Pie Charts using the CSS conic-gradient()",
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
