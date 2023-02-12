@@ -7,15 +7,17 @@ const Chart = ({ data }) => {
   const degrees = (percent) => Math.round((percent / 100) * 360);
 
   const css_string = data
-    .map((_, index, array) => {
+    .reduce((items, item, index, array) => {
       const start_value = array[index - 1]?.value ? array[index - 1].value : 0;
-      const end_value = (array[index].value += array[index - 1]?.value ? array[index - 1].value : 0);
+      const end_value = (item.value += array[index - 1]?.value ? array[index - 1].value : 0);
 
       const start_degrees = degrees(percent(start_value));
       const end_degrees = degrees(percent(end_value));
 
-      return ` var(--color-pink-${(index + 1) * 100}) ${start_degrees}deg ${end_degrees}deg`;
-    })
+      items.push(` var(--color-pink-${(index + 1) * 100}) ${start_degrees}deg ${end_degrees}deg`);
+
+      return items;
+    }, [])
     .join();
 
   return (

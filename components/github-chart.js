@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Chart = ({ data }) => {
-  const total_value = data.reduce((a, b) => a + b.value, 0);
-  const percent = (num) => Math.round((num / total_value) * 100);
-  const degrees = (percent) => Math.round((percent / 100) * 360);
+const Chart = ({ css_string }) => {
+  // const total_value = data.reduce((a, b) => a + b.value, 0);
+  // const percent = (num) => Math.round((num / total_value) * 100);
+  // const degrees = (percent) => Math.round((percent / 100) * 360);
 
-  const css_string = data
-    .map((chart, index, array) => {
-      const { color } = chart;
-      const start_value = array[index - 1]?.value ? array[index - 1].value : 0;
-      const end_value = (array[index].value += array[index - 1]?.value ? array[index - 1].value : 0);
+  // const css_string = data
+  //   .map((chart, index, array) => {
+  //     const { color } = chart;
+  //     const start_value = array[index - 1]?.value ? array[index - 1].value : 0;
+  //     const end_value = (array[index].value += array[index - 1]?.value ? array[index - 1].value : 0);
 
-      const start_degrees = degrees(percent(start_value));
-      const end_degrees = degrees(percent(end_value));
+  //     const start_degrees = degrees(percent(start_value));
+  //     const end_degrees = degrees(percent(end_value));
 
-      return `${color} ${start_degrees}deg ${end_degrees}deg`;
-    })
-    .join();
+  //     return `${color} ${start_degrees}deg ${end_degrees}deg`;
+  //   })
+  //   .join();
 
   return (
     <div className='flex flex-col gap-8 grow'>
@@ -55,13 +55,7 @@ const Chart = ({ data }) => {
 
 Chart.propTypes = {
   /** Shape of the data to drive the chart */
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      value: PropTypes.number.isRequired,
-      color: PropTypes.string,
-    })
-  ).isRequired,
+  css_string: PropTypes.string.isRequired,
 };
 
 export default Chart;
