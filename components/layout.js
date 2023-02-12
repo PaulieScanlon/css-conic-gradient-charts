@@ -13,7 +13,7 @@ const Layout = ({ children }) => {
             rel='noopener'
             className='text-pink-400 hover:text-pink-500'
           >
-            conic-gradient
+            conic-gradient()
           </a>
         </p>
       </div>
