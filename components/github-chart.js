@@ -23,7 +23,14 @@ const Chart = ({ data }) => {
     <div className='flex flex-col gap-8 grow'>
       <div className='flex flex-col'>
         <h2 className='m-0 text-white text-xl font-bold'>GitHub Chart</h2>
-        <p className='m-0 text-xs text-gray-400  flex'>./components/github-chart.js</p>
+        <a
+          href='https://github.com/PaulieScanlon/css-conic-gradient-charts/blob/main/components/github-chart.js'
+          target='_blank'
+          rel='noopener'
+          className='m-0 text-xs text-gray-400 flex hover:text-yellow-300'
+        >
+          ./components/github-chart.js
+        </a>
       </div>
       <div className='flex grow justify-center'>
         <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' className='rounded-full'>

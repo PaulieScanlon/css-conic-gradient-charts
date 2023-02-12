@@ -22,7 +22,14 @@ const Chart = ({ data }) => {
     <div className='flex flex-col gap-8 grow'>
       <div className='flex flex-col grow'>
         <h2 className='m-0 text-white text-xl font-bold'>Donut Chart 1</h2>
-        <p className='m-0 text-xs text-gray-400 flex'>./components/donut-1.js</p>
+        <a
+          href='https://github.com/PaulieScanlon/css-conic-gradient-charts/blob/main/components/donut-1.js'
+          target='_blank'
+          rel='noopener'
+          className='m-0 text-xs text-gray-400 flex hover:text-pink-300'
+        >
+          ./components/donut-1.js
+        </a>
       </div>
       <div>
         <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' className='rounded-full'>
