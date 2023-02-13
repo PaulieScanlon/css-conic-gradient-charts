@@ -24,11 +24,11 @@ const Chart = ({ data }) => {
       </div>
       <div className='flex grow justify-center'>
         <svg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg' className='w-full h-full rounded-full'>
-          <clipPath id='ring'>
+          <clipPath id='hole'>
             <path d='M 50 0 a 50 50 0 0 1 0 100 50 50 0 0 1 0 -100 v 18 a 2 2 0 0 0 0 64 2 2 0 0 0 0 -64' />
           </clipPath>
 
-          <foreignObject x='0' y='0' width='100' height='100' clipPath='url(#ring)'>
+          <foreignObject x='0' y='0' width='100' height='100' clipPath='url(#hole)'>
             <div
               xmlns='http://www.w3.org/1999/xhtml'
               className='w-full h-full'
