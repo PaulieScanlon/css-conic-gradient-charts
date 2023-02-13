@@ -11,8 +11,8 @@ const Chart = ({ data }) => {
       items.push(item);
 
       item.count = item.count || 0;
-      item.count += array[index - 1]?.count || 0;
-      item.start_value = item.start_value || array[index - 1]?.count ? array[index - 1].count : 0;
+      item.count += array[index - 1]?.count || item.count;
+      item.start_value = array[index - 1]?.count ? array[index - 1].count : 0;
       item.end_value = item.count += item.value;
       item.start_percent = convertToPercent(item.start_value);
       item.end_percent = convertToPercent(item.end_value);
