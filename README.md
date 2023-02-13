@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://css-conic-gradient-charts.vercel.app/">
+    <img alt="paulie.dev" src="https://css-conic-gradient-charts.vercel.app/open-graph-image.jpg" />
+  </a>
+</p>
+
 # CSS conic-gradient Charts
 
 Create Donut or Pie Charts using the CSS [conic-gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient)
