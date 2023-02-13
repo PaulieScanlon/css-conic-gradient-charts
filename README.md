@@ -75,11 +75,11 @@ const css_string = data
 ### Example Output
 
 ```shell
-var(--color-violet-100) 0deg 29deg,
-var(--color-violet-200) 29deg 101deg,
-var(--color-violet-300) 101deg 320deg,
-var(--color-violet-400) 320deg 655deg,
-var(--color-violet-500) 655deg 1145deg
+var(--color-violet-100) 0deg 14deg,
+var(--color-violet-200) 14deg 43deg,
+var(--color-violet-300) 43deg 130deg,
+var(--color-violet-400) 130deg 234deg,
+var(--color-violet-500) 234deg 360deg
 ```
 
 ### Usage
