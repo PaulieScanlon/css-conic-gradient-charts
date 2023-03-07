@@ -8,7 +8,8 @@
 
 Create Donut or Pie Charts using the CSS [conic-gradient](https://developer.mozilla.org/en-US/docs/Web/CSS/gradient/conic-gradient)
 
-- 🚀 [Live Preview](https://css-conic-gradient-charts.vercel.app/)
+- 🚀 [Live Preview: https://css-conic-gradient-charts.vercel.app/](https://css-conic-gradient-charts.vercel.app/)
+- ✏️ [Blog: https://www.smashingmagazine.com/2023/03/dynamic-donut-charts-tailwind-css-react/](https://www.smashingmagazine.com/2023/03/dynamic-donut-charts-tailwind-css-react/)
 
 ## Principle
 
